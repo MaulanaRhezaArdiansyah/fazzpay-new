@@ -7,7 +7,8 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <>
-      <main className="w-full h-screen bg-black flex items-center justify-center">
+      <main className="w-full h-screen bg-black flex items-center justify-center flex-col">
+        <h1 className="text-3xl text-white font-medium">FazzPay App</h1>
         <h1 className="text-3xl text-white font-medium">FazzPay App</h1>
       </main>
     </>
