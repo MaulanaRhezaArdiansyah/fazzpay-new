@@ -42,7 +42,7 @@ export default function FormSignup() {
         router.push("/auth/login");
       })
       .catch((err) => {
-        console.log(err.response.data.message);
+        // console.log(err.response.data.message);
         setValidate({ error: true, message: err.response.data.message });
       });
   };
@@ -52,7 +52,7 @@ export default function FormSignup() {
         <Image src="/images/person.png" alt="person" width={30} height={30} />
         <input
           onChange={(e) => {
-            console.log(e.target.value);
+            // console.log(e.target.value);
             setSignupData({
               ...signupData,
               firstname: e.target.value,
@@ -67,7 +67,7 @@ export default function FormSignup() {
         <Image src="/images/person.png" alt="person" width={30} height={30} />
         <input
           onChange={(e) => {
-            console.log(e.target.value);
+            // console.log(e.target.value);
 
             setSignupData({
               ...signupData,
@@ -83,7 +83,7 @@ export default function FormSignup() {
         <Image src="/images/mail.png" alt="email" width={30} height={30} />
         <input
           onChange={(e) => {
-            console.log(e.target.value);
+            // console.log(e.target.value);
 
             setSignupData({
               ...signupData,
@@ -99,7 +99,7 @@ export default function FormSignup() {
         <Image src="/images/lock.png" alt="password" width={30} height={30} />
         <input
           onChange={(e) => {
-            console.log(e.target.value);
+            // console.log(e.target.value);
 
             setSignupData({
               ...signupData,

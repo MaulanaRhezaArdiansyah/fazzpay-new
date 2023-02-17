@@ -24,7 +24,7 @@ export default function HeaderLogged() {
   }, []);
   const [showModal, setShowModal] = useState(false);
   const [showModalNotif, setShowModalNotif] = useState(false);
-  console.log(dataUser);
+  // console.log(dataUser);
   return (
     <>
       <header className="logged flex justify-between w-full h-20 sm:h-28 items-center rounded-br-md rounded-bl-md shadow-xl bg-white/90 backdrop-blur-sm fixed top-0 left-0 px-3 md:px-32">
