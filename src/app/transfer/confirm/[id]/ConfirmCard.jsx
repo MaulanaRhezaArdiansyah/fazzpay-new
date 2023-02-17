@@ -6,8 +6,6 @@ export default function ConfirmCard() {
   const segment = usePathname();
   const router = useRouter();
   const id = segment.split("/")[3];
-  const amountData = parseInt(localStorage.getItem("@amount"));
-
   const [userDetail, setUserDetail] = useState([]);
   useEffect(() => {
     axios
@@ -35,9 +33,16 @@ export default function ConfirmCard() {
 
   const balanceBefore = parseInt(senderDetail?.balance);
 
+  if (typeof window !== "undefined") {
+    var amountData = parseInt(localStorage.getItem("@amount"));
+  }
+  // console.log(amountData);
+
   const [amountConfirm, setAmountConfirm] = useState({
     amount: amountData,
   });
+  // console.log(amountConfirm?.amount);
+
   const handleTransfer = (event) => {
     event.preventDefault();
     const idSender = JSON.parse(localStorage.getItem("@login"))?.user.id;
