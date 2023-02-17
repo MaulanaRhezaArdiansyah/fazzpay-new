@@ -22,6 +22,7 @@ export default function TopupModal({ isVisible, closeModal }) {
         alert(result.data.message);
         setTopUpData(result.data.data.balance);
         closeModal();
+        router.refresh();
       })
       .catch((err) => {
         console.log(err);

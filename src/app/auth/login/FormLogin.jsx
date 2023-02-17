@@ -31,6 +31,13 @@ export default function FormLogin() {
         setValidate({ error: true, message: err.response.data.message });
       });
   };
+  if (typeof window !== "undefined") {
+    // Perform localStorage action
+    const isLogged = JSON.parse(localStorage.getItem("@login"));
+    if (isLogged) {
+      router.push("/dashboard");
+    }
+  }
   return (
     <form onSubmit={handleLogin} action="" className="flex flex-col gap-2">
       <div className="flex gap-2 items-center h-14 border-b-[#A9A9A999] border-b-[1px] bg-transparent mb-3">
