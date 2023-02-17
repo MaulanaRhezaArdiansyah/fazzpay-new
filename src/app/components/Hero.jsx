@@ -1,6 +1,6 @@
-import Link from 'next/link'
-import React from 'react'
-import Image from 'next/image'
+import Link from "next/link";
+import React from "react";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -13,15 +13,20 @@ export default function Hero() {
           We bring you a mobile app for banking problems that oftenly wasting
           much of your times.
         </p>
-        <Link href={"/"}>
+        <Link href={"/dashboard"}>
           <button className="border-2 border-white bg-white rounded-md w-36 py-3 text-[#6379F4] font-bold hover:bg-transparent hover:text-white duration-200">
             Try It Free
           </button>
         </Link>
       </div>
       <div className="image md:w-[50%] h-full flex items-end max-sm:hidden">
-        <Image src="/images/phone-hero.png" alt="phone-pic-lp" width={600} height={500}/>
+        <Image
+          src="/images/phone-hero.png"
+          alt="phone-pic-lp"
+          width={600}
+          height={500}
+        />
       </div>
     </div>
-  )
+  );
 }
