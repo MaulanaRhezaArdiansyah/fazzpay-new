@@ -6,21 +6,22 @@ import axios from "axios";
 
 export default function TopupModal({ isVisible, closeModal }) {
   const router = useRouter();
-  const id = JSON.parse(localStorage.getItem("@login"))?.user.id;
   const [topUpData, setTopUpData] = useState({
     balance: 0,
   });
   const handleTopUp = (event) => {
     event.preventDefault();
+    const id = JSON.parse(localStorage.getItem("@login"))?.user.id;
     axios({
       method: "PATCH",
       url: `http://localhost:8000/api/v1/users/${id}`,
       data: topUpData,
     })
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         alert(result.data.message);
         setTopUpData(result.data.data.balance);
+        closeModal();
       })
       .catch((err) => {
         console.log(err);

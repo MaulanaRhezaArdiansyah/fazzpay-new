@@ -5,12 +5,12 @@ import Link from "next/link";
 export default function TransactionHistory() {
   const router = useRouter();
   return (
-    <div className="transaction-history bg-white rounded-xl md:h-full md:w-2/5 shadow-lg flex flex-col md:p-5">
+    <div className="transaction-history bg-white rounded-xl md:h-full md:w-2/5 shadow-lg flex flex-col md:p-5 p-3">
       <div className="w-full  md:h-[10%] flex justify-between items-center mb-3">
         <p className="text-[#3A3D42] text-xl font-bold">Transaction History</p>
         <Link href={"/history"}>
           <button
-            // onClick={() => router.push("/history")}
+            onClick={() => router.push("/history")}
             className="text-[#6379F4] hover:text-[#2541df] duration-200"
           >
             See all

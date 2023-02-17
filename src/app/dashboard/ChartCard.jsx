@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function ChartCard() {
   return (
-    <div className="left bg-white rounded-xl md:h-full md:w-3/5 shadow-xl flex flex-col p-5 justify-between">
+    <div className="left bg-white rounded-xl h-[30rem] md:h-full md:w-3/5 shadow-xl flex flex-col p-3 sm:p-5 justify-between">
       <div className="arrow-up-down flex justify-between items-center">
         <div className="flex flex-col gap-3">
           <Image
@@ -16,10 +16,6 @@ export default function ChartCard() {
           <p className="text-[#3A3D42] text-xl font-bold">Rp2.120.000</p>
         </div>
         <div className="flex flex-col gap-3">
-          {/* <Image
-                src={require("../../../assets/img/arrow-chart-red.png")}
-                alt=""
-              /> */}
           <Image
             src="/images/arrow-chart-red.png"
             alt=""
@@ -30,7 +26,7 @@ export default function ChartCard() {
           <p className="text-[#3A3D42] text-xl font-bold">Rp2.120.000</p>
         </div>
       </div>
-      <div className="chart-grafik-container flex w-full md:h-[70%] gap-10 justify-center relative">
+      <div className="chart-grafik-container flex w-full md:h-[70%] gap-10 justify-center relative ">
         <div className="flex flex-col h-full justify-end gap-2">
           <div className="bg-[#6379F4] w-5 h-[80%] rounded-xl"></div>
           <p className="text-[#8F8F8F]">Sat</p>

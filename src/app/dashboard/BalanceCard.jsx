@@ -23,7 +23,7 @@ export default function BalanceCard() {
   };
   return (
     <>
-      <div className="top shadow-lg flex w-full md:h-1/4 rounded-xl bg-[#6379F4] justify-between items-center md:p-12 md:px-8">
+      <div className="top shadow-lg flex w-full h-40 md:h-1/4 rounded-xl bg-[#6379F4] justify-between items-center p-3 md:p-12 md:px-8">
         <div className="text flex flex-col gap-5">
           <p className="text-[#E0E0E0]">Balance</p>
           <p className="text-white text-4xl">
@@ -35,7 +35,7 @@ export default function BalanceCard() {
         </div>
         <div className="button flex flex-col gap-3 text-white">
           <Link href={"/transfer"} title="transfer">
-            <button className="flex gap-2 items-center justify-center w-36 py-3 rounded-xl border-[2px] border-white bg-[#9aa6eb] hover:bg-[#8092f7] duration-200">
+            <button className="flex gap-2 items-center justify-center w-32 sm:w-36 py-3 rounded-xl border-[2px] border-white bg-[#9aa6eb] hover:bg-[#8092f7] duration-200">
               <Image
                 src="/images/arrow-up.svg"
                 alt="transfer"
@@ -50,7 +50,7 @@ export default function BalanceCard() {
             onClick={() => {
               setShowModal(true);
             }}
-            className="flex gap-2 items-center justify-center w-36 py-3 rounded-xl border-[2px] border-white bg-[#9aa6eb] hover:bg-[#8092f7] duration-200"
+            className="flex gap-2 items-center justify-center w-32 sm:w-36 py-3 rounded-xl border-[2px] border-white bg-[#9aa6eb] hover:bg-[#8092f7] duration-200"
             title="topup"
           >
             {/* <Image src={require("../../../assets/img/plus.svg")} alt="" /> */}
