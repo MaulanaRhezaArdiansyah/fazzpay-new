@@ -1,6 +1,6 @@
-import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
 export default function BgAuth() {
   return (
     <section className="bg-[#6379F4] hidden md:w-[55%] pl-3 md:pl-32 md:pr-10 py-3 md:py-16 md:h-full md:flex flex-col">
@@ -14,9 +14,8 @@ export default function BgAuth() {
           <Image
             src="/images/phone-auth.png"
             alt="phone-auth"
-            width={300}
+            width={500}
             height={400}
-            // className=" justify-start h-full w-full"
           />
         </div>
         <h4 className="text-3xl font-bold mb-5">
@@ -30,5 +29,5 @@ export default function BgAuth() {
         </p>
       </div>
     </section>
-  )
+  );
 }
