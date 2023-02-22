@@ -13,6 +13,14 @@ export default function FormLogin() {
     error: false,
     message: "",
   });
+  const showPw = () => {
+    let x = document.getElementById("pwInput");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  };
 
   const router = useRouter();
   const handleLogin = (event) => {
@@ -66,6 +74,15 @@ export default function FormLogin() {
           type="password"
           placeholder="Enter your password"
           className=" focus:outline-none bg-transparent w-full h-full"
+          id="pwInput"
+        />
+        <Image
+          src="/images/illuminati.png"
+          alt="illuminati-eye"
+          onClick={showPw}
+          className="cursor-pointer"
+          width={20}
+          height={20}
         />
       </div>
       <button className="text-[#3A3D42CC] self-end font-semibold mb-10">
