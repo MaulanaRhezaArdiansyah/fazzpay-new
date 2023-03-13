@@ -41,7 +41,7 @@ export default function DropdownProfile({ isVisible, closeModal }) {
           <div className="menu-nav-mobile text-center text-2xl text-[#3A3D42CC] flex flex-col gap-3 ">
             <button
               onClick={() => {
-                router.push("/home");
+                router.push("/dashboard");
               }}
               className="hover:text-[#6379F4] duration-200"
             >

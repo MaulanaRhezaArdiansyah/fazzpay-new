@@ -25,7 +25,7 @@ export default function SidebarMenu() {
         <div className="top flex flex-col md:gap-12">
           <button
             onClick={() => {
-              router.push("/home");
+              router.push("/dashboard");
             }}
             className="flex items-center md:gap-3 cursor-pointer text-[#3A3D42CC] hover:text-[#6379F4]"
             activeclassname="active"
