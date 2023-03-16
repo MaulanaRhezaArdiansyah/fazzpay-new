@@ -86,7 +86,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 <!-- LINK -->
 
-[next.js]: https://img.shields.io/badge/Next.js-20232A?style=for-the-badge&logo=next&logoColor=61DAFB
+[next.js]: https://img.shields.io/badge/Next.js-20232A?style=for-the-badge&logo=next.js&logoColor=61DAFB
 [next-url]: https://nextjs.org/
 [express.js]: https://img.shields.io/badge/Express.js-20232A?style=for-the-badge&logo=express&logoColor=61DAFB
 [express-url]: https://expressjs.com/
