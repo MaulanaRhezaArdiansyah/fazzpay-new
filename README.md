@@ -26,7 +26,7 @@
 
 ## Screenshot
 
-![screenshot](https://fazzpay.up.railway.app/uploads/images/fazzpay-landing.png)
+![screenshot](https://fazzpay.cyclic.app/uploads/images/fazzpay-landing.png)
 
 ## Quickstart
 
