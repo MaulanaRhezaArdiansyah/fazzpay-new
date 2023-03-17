@@ -9,9 +9,9 @@ export default function EditPhoneCard() {
   const [phone, setPhone] = useState({
     phone: "",
   });
-  const id = JSON.parse(localStorage.getItem("@login"))?.user.id;
   const handleEditPhone = (event) => {
     event.preventDefault();
+    const id = JSON.parse(localStorage.getItem("@login"))?.user.id;
     axios({
       method: "PATCH",
       url: `http://localhost:8000/api/v1/users/edit-phone/${id}`,
