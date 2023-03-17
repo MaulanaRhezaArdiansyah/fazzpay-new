@@ -7,17 +7,19 @@ import axios from "axios";
 export default function BalanceCard() {
   const [showModal, setShowModal] = useState(false);
   const [dataUser, setDataUser] = useState({});
+  const [refetch, setRefetch] = useState(false);
   useEffect(() => {
     const id = JSON.parse(localStorage.getItem("@login"))?.user.id;
     axios
       .get(`http://localhost:8000/api/v1/users/${id}`)
       .then((result) => {
-        setDataUser(result.data.data);
+        setDataUser(result?.data?.data);
+        setRefetch(!refetch);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [refetch]);
   const numberWithCommas = (num) => {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   };

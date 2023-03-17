@@ -22,7 +22,7 @@ export default function EditPhoneCard() {
         router.refresh();
       })
       .catch((err) => {
-        console.log(err.response.data.message);
+        console.log(err?.response?.data?.message);
       });
   };
   return (
@@ -37,7 +37,7 @@ export default function EditPhoneCard() {
         action=""
         className="md:w-[400px] md:h-80 self-center flex flex-col items-center justify-center gap-10 "
       >
-        <div className="input-phone flex items-center w-full h-12 border-b-[2px] border-b-[#A9A9A999]  gap-2">
+        <div className="input-phone flex items-center w-full h-12 border-b-[2px] border-b-[#A9A9A999] gap-2">
           <div className="flex items-center justify-center  w-8 h-full">
             <Image src={require("../../../assets/img/edit-phone.png")} alt="" />
           </div>
@@ -50,7 +50,7 @@ export default function EditPhoneCard() {
               });
             }}
             type="text"
-            className="w-[90%] h-full bg-transparent placeholder:text-[#A9A9A9CC] focus:outline-none "
+            className="w-[90%] h-full bg-transparent placeholder:text-[#A9A9A9CC] focus:outline-none"
             placeholder="Enter your phone number"
           />
         </div>

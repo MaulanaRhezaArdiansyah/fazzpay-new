@@ -35,26 +35,20 @@ export default function HeaderLogged() {
           <div
             onClick={() => setShowModal(true)}
             className="h-14 w-14 rounded-full hover:border-[6px] hover:border-[#6379F4] duration-200 cursor-pointer"
+            title={dataUser.first_name && dataUser?.first_name}
           >
-            {/* <Image
+            <Image
               src={
-                dataUser[0]?.avatar
-                  ? `http://localhost:8000/uploads/images/${dataUser[0]?.avatar}`
-                  : `/images/default-avatar.jpg`
-              }
-              alt="avatar"
-              width={30}
-              height={30}
-            /> */}
-            <img
-              src={
-                dataUser?.avatar
-                  ? `http://localhost:8000/uploads/images/${dataUser.avatar}`
+                dataUser.avatar
+                  ? `http://localhost:8000/uploads/images/${dataUser?.avatar}`
                   : `http://localhost:3000/images/default-avatar.jpg`
               }
-              alt=""
-              className="w-full h-full rounded-full"
-              title={`${dataUser?.first_name}`}
+              className="rounded-full"
+              width={62}
+              height={62}
+              alt={
+                dataUser?.first_name ? dataUser?.first_name : "profile avatar"
+              }
             />
           </div>
           <div className="flex flex-col justify-center max-sm:hidden">

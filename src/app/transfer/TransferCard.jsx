@@ -12,7 +12,7 @@ export default function TransferCard() {
     axios
       .get(`http://localhost:8000/api/v1/users?search=${keyword}&page=${page}`)
       .then((result) => {
-        setUserData(result.data.data);
+        setUserData(result?.data?.data);
       })
       .catch((err) => {
         console.log(err);
@@ -52,14 +52,16 @@ export default function TransferCard() {
             >
               <div className="flex items-center h-full w-full ">
                 <div className="w-14 h-14 flex justify-center items-center mr-3">
-                  <img
+                  <Image
                     src={
                       i.avatar
-                        ? `http://localhost:8000/uploads/images/${i.avatar}`
+                        ? `http://localhost:8000/uploads/images/${i?.avatar}`
                         : `http://localhost:3000/images/default-avatar.jpg`
                     }
-                    alt={i.first_name ? i.first_name : "profile avatar"}
-                    className="w-full h-full rounded-full"
+                    className="rounded-full"
+                    width={62}
+                    height={62}
+                    alt={i?.first_name ? i?.first_name : "profile avatar"}
                   />
                 </div>
                 <div>

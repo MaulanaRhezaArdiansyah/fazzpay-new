@@ -32,15 +32,17 @@ export default function ProfileCardGeneral() {
           className="flex flex-col items-center justify-center gap-1 md:mb-5 cursor-pointer mb-2"
           action=""
         >
-          <div className="h-16 w-16 flex items-center justify-center ">
-            <img
+          <div className="h-16 w-16 flex items-center justify-center bg-red-400">
+            <Image
               src={
                 dataUser?.avatar
                   ? `http://localhost:8000/uploads/images/${dataUser.avatar}`
                   : `http://localhost:3000/images/default-avatar.jpg`
               }
+              width={62}
+              height={62}
+              className="rounded-full"
               alt={dataUser?.first_name}
-              className="w-full h-full rounded-full"
             />
           </div>
           <label
