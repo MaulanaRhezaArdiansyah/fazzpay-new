@@ -7,6 +7,7 @@ import TopupModal from "./TopupModal";
 export default function SidebarMenu() {
   const router = useRouter();
   const pathname = usePathname();
+  const pageActive = pathname.split("/")[1];
   const [showModal, setShowModal] = useState(false);
   const [dataUser, setDataUser] = useState([]);
   useEffect(() => {
@@ -72,7 +73,7 @@ export default function SidebarMenu() {
                 strokeLinejoin="round"
               />
             </svg>
-            <p className={pathname == "/transfer" ? "active-link" : ""}>
+            <p className={pageActive == "transfer" ? "active-link" : ""}>
               Transfer
             </p>
           </button>
@@ -94,7 +95,7 @@ export default function SidebarMenu() {
             title="profile"
           >
             <Image src="/images/user.svg" width={28} height={28} alt="user" />
-            <p className={pathname === "/profile" ? "active-link" : ""}>
+            <p className={pageActive === "profile" ? "active-link" : ""}>
               Profile
             </p>
           </button>

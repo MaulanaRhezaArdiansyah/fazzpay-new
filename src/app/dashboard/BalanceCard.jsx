@@ -6,13 +6,13 @@ import axios from "axios";
 
 export default function BalanceCard() {
   const [showModal, setShowModal] = useState(false);
-  const [dataUser, setDataUser] = useState([]);
+  const [dataUser, setDataUser] = useState({});
   useEffect(() => {
     const id = JSON.parse(localStorage.getItem("@login"))?.user.id;
     axios
       .get(`http://localhost:8000/api/v1/users/${id}`)
       .then((result) => {
-        setDataUser(result.data.data[0]);
+        setDataUser(result.data.data);
       })
       .catch((err) => {
         console.log(err);
@@ -27,7 +27,7 @@ export default function BalanceCard() {
         <div className="text flex flex-col gap-5">
           <p className="text-[#E0E0E0]">Balance</p>
           <p className="text-white text-4xl">
-            Rp{dataUser?.balance ? numberWithCommas(dataUser.balance) : "0"}
+            Rp {dataUser?.balance ? numberWithCommas(dataUser.balance) : "0"}
           </p>
           <p className="text-[#DFDCDC]">
             {dataUser?.phone ? dataUser.phone : "(empty phone number)"}

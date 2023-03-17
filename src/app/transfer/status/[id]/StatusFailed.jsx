@@ -7,12 +7,12 @@ export default function StatusFailed() {
   const segment = usePathname();
   const router = useRouter();
   const id = segment.split("/")[3];
-  const [userDetail, setUserDetail] = useState([]);
+  const [userDetail, setUserDetail] = useState({});
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/v1/users/${id}`)
       .then((result) => {
-        setUserDetail(result.data.data[0]);
+        setUserDetail(result.data.data);
       })
       .catch((err) => {
         console.log(err);

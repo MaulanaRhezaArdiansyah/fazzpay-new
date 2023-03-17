@@ -1,33 +1,33 @@
-import React from 'react'
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 export default function AboutApp() {
-    const about = [
-        {
-          id: 1,
-          title: "support",
-          image: "support.png",
-          tagline: "24/7 Support",
-          content:
-            "We have 24/7 contact support so you can contact us whenever you want and we will respond it.",
-        },
-        {
-          id: 2,
-          title: "privacy",
-          image: "privacy.png",
-          tagline: "Data Privacy",
-          content:
-            "We make sure your data is safe in our database and we will encrypt any data you submitted to us.",
-        },
-        {
-          id: 3,
-          title: "download",
-          image: "download.png",
-          tagline: "Easy Download",
-          content:
-            "Zwallet is 100% totally free to use it’s now available on Google Play Store and App Store.",
-        },
-      ];
+  const about = [
+    {
+      id: 1,
+      title: "support",
+      image: "support.png",
+      tagline: "24/7 Support",
+      content:
+        "We have 24/7 contact support so you can contact us whenever you want and we will respond it.",
+    },
+    {
+      id: 2,
+      title: "privacy",
+      image: "privacy.png",
+      tagline: "Data Privacy",
+      content:
+        "We make sure your data is safe in our database and we will encrypt any data you submitted to us.",
+    },
+    {
+      id: 3,
+      title: "download",
+      image: "download.png",
+      tagline: "Easy Download",
+      content:
+        "FazzPay is 100% totally free to use it’s now available on Google Play Store and App Store.",
+    },
+  ];
   return (
     <div className="about-app md:px-32 bg-base w-full md:h-screen h-[140vh] flex flex-col items-center justify-center px-3 md:gap-6 gap-6">
       <h2 className="text-[#6379F4] text-5xl font-bold text-center">
@@ -45,11 +45,11 @@ export default function AboutApp() {
               className="about-card rounded-xl bg-white shadow-lg md:h-64 h-60 md:w-72 flex flex-col items-center justify-center md:gap-3 md:p-5"
             >
               <Image
-                    src={`/images/${i.image}`}
-                    alt={i.title}
-                    height={60}
-                    width={60}
-                  />
+                src={`/images/${i.image}`}
+                alt={i.title}
+                height={60}
+                width={60}
+              />
               <h4 className="text-[#3A3D42] font-bold text-xl text-center">
                 {i.tagline}
               </h4>
@@ -59,5 +59,5 @@ export default function AboutApp() {
         })}
       </div>
     </div>
-  )
+  );
 }
