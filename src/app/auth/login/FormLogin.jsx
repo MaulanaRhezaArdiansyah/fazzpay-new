@@ -36,7 +36,7 @@ export default function FormLogin() {
         router.push("/dashboard");
       })
       .catch((err) => {
-        setValidate({ error: true, message: err.response.data.message });
+        setValidate({ error: true, message: err?.response?.data?.message });
       });
   };
   if (typeof window !== "undefined") {

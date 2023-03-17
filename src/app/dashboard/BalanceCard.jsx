@@ -27,10 +27,10 @@ export default function BalanceCard() {
         <div className="text flex flex-col gap-5">
           <p className="text-[#E0E0E0]">Balance</p>
           <p className="text-white text-4xl">
-            Rp{dataUser.balance ? numberWithCommas(dataUser.balance) : "0"}
+            Rp{dataUser?.balance ? numberWithCommas(dataUser.balance) : "0"}
           </p>
           <p className="text-[#DFDCDC]">
-            {dataUser.phone ? dataUser.phone : "(empty phone number)"}
+            {dataUser?.phone ? dataUser.phone : "(empty phone number)"}
           </p>
         </div>
         <div className="button flex flex-col gap-3 text-white">

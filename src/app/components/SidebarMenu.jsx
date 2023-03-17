@@ -1,4 +1,4 @@
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
@@ -6,6 +6,7 @@ import TopupModal from "./TopupModal";
 
 export default function SidebarMenu() {
   const router = useRouter();
+  const pathname = usePathname();
   const [showModal, setShowModal] = useState(false);
   const [dataUser, setDataUser] = useState([]);
   useEffect(() => {
@@ -27,8 +28,7 @@ export default function SidebarMenu() {
             onClick={() => {
               router.push("/dashboard");
             }}
-            className="flex items-center md:gap-3 cursor-pointer text-[#3A3D42CC] hover:text-[#6379F4]"
-            activeclassname="active"
+            className={`flex items-center md:gap-3 cursor-pointer text-[#3A3D42CC] hover:text-[#6379F4]`}
             title="dashboard"
           >
             <Image
@@ -37,13 +37,15 @@ export default function SidebarMenu() {
               height={28}
               alt="dashboard"
             />
-            <p activeclassname="active">Dashboard</p>
+            <p className={pathname == "/dashboard" ? "active-link" : ""}>
+              Dashboard
+            </p>
           </button>
           <button
             onClick={() => {
               router.push("/transfer");
             }}
-            className="flex items-center md:gap-3 cursor-pointer text-[#3A3D42CC] hover:text-[#6379F4]"
+            className={`flex items-center md:gap-3 cursor-pointer text-[#3A3D42CC] hover:text-[#6379F4]`}
             title="transfer"
           >
             <svg
@@ -70,27 +72,31 @@ export default function SidebarMenu() {
                 strokeLinejoin="round"
               />
             </svg>
-            <p>Transfer</p>
+            <p className={pathname == "/transfer" ? "active-link" : ""}>
+              Transfer
+            </p>
           </button>
           <button
             onClick={() => {
               setShowModal(true);
             }}
-            className="flex items-center md:gap-3 cursor-pointer text-[#3A3D42CC] hover:text-[#6379F4] "
+            className={`flex items-center md:gap-3 cursor-pointer text-[#3A3D42CC] hover:text-[#6379F4]`}
             title="topup"
           >
             <Image src="/images/plus.svg" width={28} height={28} alt="topup" />
-            <p>Top Up</p>
+            <p className={showModal === true ? "active-link" : ""}>Top Up</p>
           </button>
           <button
             onClick={() => {
               router.push("/profile");
             }}
-            className="flex items-center md:gap-3 cursor-pointer text-[#3A3D42CC] hover:text-[#6379F4]"
+            className={`flex items-center md:gap-3 cursor-pointer text-[#3A3D42CC] hover:text-[#6379F4]`}
             title="profile"
           >
             <Image src="/images/user.svg" width={28} height={28} alt="user" />
-            <p>Profile</p>
+            <p className={pathname === "/profile" ? "active-link" : ""}>
+              Profile
+            </p>
           </button>
         </div>
         <div className="bottom">
@@ -102,7 +108,7 @@ export default function SidebarMenu() {
               localStorage.removeItem("@login");
               router.push("/auth/login");
             }}
-            className="flex items-center md:gap-3 cursor-pointer text-[#3A3D42CC] hover:text-[#6379F4]"
+            className={`flex items-center md:gap-3 cursor-pointer text-[#3A3D42CC] hover:text-[#6379F4]`}
             title="logout"
           >
             <Image

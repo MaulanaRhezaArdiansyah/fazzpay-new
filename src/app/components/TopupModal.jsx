@@ -18,7 +18,6 @@ export default function TopupModal({ isVisible, closeModal }) {
       data: topUpData,
     })
       .then((result) => {
-        // console.log(result);
         alert(result.data.message);
         setTopUpData(result.data.data.balance);
         closeModal();

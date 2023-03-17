@@ -42,10 +42,19 @@ export default function FormSignup() {
         router.push("/auth/login");
       })
       .catch((err) => {
-        // console.log(err.response.data.message);
-        setValidate({ error: true, message: err.response.data.message });
+        setValidate({ error: true, message: err?.response?.data?.message });
       });
   };
+
+  const showPw = () => {
+    let x = document.getElementById("pwInput");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  };
+
   return (
     <form onSubmit={handleSignup} action="" className="flex flex-col gap-4">
       <div className="flex gap-2 items-center h-14 border-b-[#A9A9A999] border-b-[1px] bg-transparent">
@@ -109,6 +118,15 @@ export default function FormSignup() {
           type="password"
           placeholder="Enter your password"
           className=" focus:outline-none bg-transparent w-full h-full"
+          id="pwInput"
+        />
+        <Image
+          src="/images/illuminati.png"
+          alt="illuminati-eye"
+          onClick={showPw}
+          className="cursor-pointer"
+          width={20}
+          height={20}
         />
       </div>
 

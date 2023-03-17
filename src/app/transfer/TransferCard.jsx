@@ -7,17 +7,17 @@ export default function TransferCard() {
   const router = useRouter();
   const [userData, setUserData] = useState([]);
   const [keyword, setKeyword] = useState("");
+  const [page, setPage] = useState(1);
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/v1/users?search=${keyword}`)
+      .get(`http://localhost:8000/api/v1/users?search=${keyword}&page=${page}`)
       .then((result) => {
-        // console.log(result.data.data);
         setUserData(result.data.data);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, [keyword]);
+  }, [keyword, page]);
   return (
     <div className="md:w-full md:h-full bg-white rounded-xl shadow-xl flex flex-col p-10 gap-6">
       <p className="text-xl text-[#3A3D42] font-bold">Search receiver</p>
@@ -74,6 +74,24 @@ export default function TransferCard() {
             </div>
           );
         })}
+      </div>
+      <div className="pagination flex justify-center items-center h-20 gap-3">
+        <button
+          className={`btn-pagination ${
+            page == 1 ? "active-btn-pagination" : ""
+          }`}
+          onClick={() => setPage(1)}
+        >
+          1
+        </button>
+        <button
+          className={`btn-pagination ${
+            page == 2 ? "active-btn-pagination" : ""
+          }`}
+          onClick={() => setPage(2)}
+        >
+          2
+        </button>
       </div>
     </div>
   );

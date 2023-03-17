@@ -29,9 +29,9 @@ export default function HistoryCard() {
   // })
   return (
     <>
-      <div className="md:w-full md:h-full bg-white rounded-xl shadow-xl flex flex-col p-10">
-        <div className="w-full md:h-[10%] flex justify-between items-center md:mb-6">
-          <p className="text-xl text-[#3A3D42] font-bold">
+      <div className="w-full h-[90%] md:w-full md:h-full bg-white rounded-xl shadow-xl flex flex-col p-10 max-sm:mt-10">
+        <div className="w-full md:h-[10%] flex flex-col sm:flex-row justify-between items-center mb-6 md:mb-6">
+          <p className="text-xl text-[#3A3D42] font-bold max-sm:mb-3">
             Transaction History
           </p>
           <button
@@ -41,8 +41,9 @@ export default function HistoryCard() {
             --Select Filter--
           </button>
         </div>
-        <div className="transaction-list-container w-full md:h-[90%]">
-          {dataUser?.history?.map((i) => {
+        <div className="transaction-list-container w-full md:h-[90%] overflow-scroll">
+          {/* {dataUser?.history?.map((i) => { */}
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => {
             return (
               <div
                 key={i.transaction_id}

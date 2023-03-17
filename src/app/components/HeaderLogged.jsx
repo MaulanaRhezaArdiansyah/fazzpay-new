@@ -10,18 +10,20 @@ export default function HeaderLogged() {
   //   if (typeof window !== "undefined") {
   // const id = JSON.parse(localStorage?.getItem("@login"))?.user.id;
   //   }
-  const [dataUser, setDataUser] = useState([]);
+  const [dataUser, setDataUser] = useState({});
+  const [refetch, setRefetch] = useState(false);
   useEffect(() => {
     const id = JSON.parse(localStorage?.getItem("@login"))?.user.id;
     axios
       .get(`http://localhost:8000/api/v1/users/${id}`)
       .then((result) => {
-        setDataUser(result.data.data);
+        setDataUser(result?.data?.data);
+        setRefetch(!refetch);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [refetch]);
   const [showModal, setShowModal] = useState(false);
   const [showModalNotif, setShowModalNotif] = useState(false);
   // console.log(dataUser);
@@ -46,21 +48,21 @@ export default function HeaderLogged() {
             /> */}
             <img
               src={
-                dataUser[0]?.avatar
-                  ? `http://localhost:8000/uploads/images/${dataUser[0].avatar}`
+                dataUser?.avatar
+                  ? `http://localhost:8000/uploads/images/${dataUser.avatar}`
                   : `http://localhost:3000/images/default-avatar.jpg`
               }
               alt=""
               className="w-full h-full rounded-full"
-              title={`${dataUser[0]?.first_name}`}
+              title={`${dataUser?.first_name}`}
             />
           </div>
           <div className="flex flex-col justify-center max-sm:hidden">
             <p className="text-xl text-[#3A3D42] font-bold">
-              {dataUser[0]?.first_name} {dataUser[0]?.last_name}
+              {dataUser?.first_name} {dataUser?.last_name}
             </p>
             <p className="text-[#3A3D42E5]">
-              {dataUser[0]?.phone ? dataUser[0]?.phone : "(empty phone number)"}
+              {dataUser?.phone ? dataUser?.phone : "(empty phone number)"}
             </p>
           </div>
           <button

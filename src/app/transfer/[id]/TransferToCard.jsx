@@ -7,29 +7,32 @@ export default function TransferToCard() {
   const segment = usePathname();
   const router = useRouter();
   const id = segment.split("/")[2];
-  const [userDetail, setUserDetail] = useState([]);
+  const [userDetail, setUserDetail] = useState({});
+  const [refetch, setRefetch] = useState(false);
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/v1/users/${id}`)
       .then((result) => {
-        setUserDetail(result.data.data[0]);
+        setUserDetail(result?.data?.data);
+        setRefetch(!refetch);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, [id]);
-  const [userLoginData, setUserLoginData] = useState([]);
+  }, [refetch, id]);
+  const [userLoginData, setUserLoginData] = useState({});
   useEffect(() => {
     const userLoginID = JSON.parse(localStorage.getItem("@login"))?.user.id;
     axios
       .get(`http://localhost:8000/api/v1/users/${userLoginID}`)
       .then((result) => {
-        setUserLoginData(result.data.data[0]);
+        setUserLoginData(result?.data?.data);
+        setRefetch(!refetch);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [refetch]);
 
   const [amount, setAmount] = useState(0);
   const sendAmountData = (event) => {
@@ -49,12 +52,12 @@ export default function TransferToCard() {
   return (
     <form
       onSubmit={sendAmountData}
-      className="md:w-full md:h-full bg-white rounded-xl shadow-xl flex flex-col p-10 gap-6"
+      className="h-[80%] md:w-full md:h-full bg-white rounded-xl shadow-xl max-sm:mt-10 flex flex-col p-10 gap-6"
     >
       <p className="text-xl text-[#3A3D42] font-bold">Transfer Money</p>
       <div className="receiver-card bg-white w-full h-28 rounded-xl shadow-lg flex p-5 mb-5">
         <div className="flex items-center h-full w-full ">
-          <div className="w-14 h-14 flex justify-center items-center mr-3">
+          <div className="w-20 h-16 sm:h-14 sm:w-14 flex justify-center items-center mr-3">
             <img
               src={
                 userDetail.avatar
@@ -62,7 +65,7 @@ export default function TransferToCard() {
                   : `http://localhost:3000/images/default-avatar.jpg`
               }
               alt="profile avatar"
-              className="w-full h-full rounded-full"
+              className="w-16 h-16 sm:w-full sm:h-full rounded-full"
             />
           </div>
           <div>
@@ -94,7 +97,6 @@ export default function TransferToCard() {
         <div className="notes flex items-center w-full h-12 border-b-[2px] border-b-[#A9A9A999]  gap-2">
           <div className="flex items-center justify-center  w-8 h-full">
             <Image
-              // src={require("../../../../assets/img/edit-transfer.png")}
               src="/images/edit-transfer.png"
               alt=""
               width={18}

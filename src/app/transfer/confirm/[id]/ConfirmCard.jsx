@@ -6,25 +6,25 @@ export default function ConfirmCard() {
   const segment = usePathname();
   const router = useRouter();
   const id = segment.split("/")[3];
-  const [userDetail, setUserDetail] = useState([]);
+  const [userDetail, setUserDetail] = useState({});
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/v1/users/${id}`)
       .then((result) => {
-        setUserDetail(result.data.data[0]);
+        setUserDetail(result?.data?.data);
       })
       .catch((err) => {
         console.log(err);
       });
   }, [id]);
 
-  const [senderDetail, setSenderDetail] = useState([]);
+  const [senderDetail, setSenderDetail] = useState({});
   useEffect(() => {
     const idSender = JSON.parse(localStorage.getItem("@login"))?.user.id;
     axios
       .get(`http://localhost:8000/api/v1/users/${idSender}`)
       .then((result) => {
-        setSenderDetail(result.data.data[0]);
+        setSenderDetail(result?.data?.data);
       })
       .catch((err) => {
         console.log(err);
@@ -36,12 +36,12 @@ export default function ConfirmCard() {
   if (typeof window !== "undefined") {
     var amountData = parseInt(localStorage.getItem("@amount"));
   }
-  // console.log(amountData);
+
+  const balanceLeft = balanceBefore - amountData;
 
   const [amountConfirm, setAmountConfirm] = useState({
     amount: amountData,
   });
-  // console.log(amountConfirm?.amount);
 
   const handleTransfer = (event) => {
     event.preventDefault();
@@ -65,10 +65,14 @@ export default function ConfirmCard() {
       });
   };
 
+  const numberWithCommas = (num) => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  };
+
   return (
     <form
       onSubmit={handleTransfer}
-      className="md:w-full md:h-full bg-white rounded-xl shadow-xl flex flex-col p-10 gap-6"
+      className="h-[90%] md:w-full md:h-full bg-white rounded-xl shadow-xl flex flex-col p-10 gap-6 max-sm:mt-10"
     >
       <p className="text-xl text-[#3A3D42] font-bold">Transfer To</p>
       <div className="receiver-card bg-white w-full h-28 rounded-xl shadow-lg flex p-5 mb-5">
@@ -98,12 +102,14 @@ export default function ConfirmCard() {
       <div className="details-container flex flex-col w-full">
         <div className="receiver-card bg-white w-full h-28 rounded-xl shadow-lg flex p-5 mb-5 flex-col justify-center gap-1">
           <p className="text-[#7A7886]">Amount</p>
-          <p className="text-[#514F5B] text-2xl font-bold">Rp{amountData}</p>
+          <p className="text-[#514F5B] text-2xl font-bold">
+            Rp{numberWithCommas(amountData)}
+          </p>
         </div>
         <div className="receiver-card bg-white w-full h-28 rounded-xl shadow-lg flex p-5 mb-5 flex-col justify-center gap-1">
           <p className="text-[#7A7886]">Balance Left</p>
           <p className="text-[#514F5B] text-2xl font-bold">
-            Rp{balanceBefore - amountData}
+            Rp{numberWithCommas(balanceLeft)}
           </p>
         </div>
         <div className="receiver-card bg-white w-full h-28 rounded-xl shadow-lg flex p-5 mb-5 flex-col justify-center gap-1">

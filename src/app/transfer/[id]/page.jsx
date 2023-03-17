@@ -9,7 +9,7 @@ export default function TransferTo() {
   return (
     <>
       <HeaderLogged />
-      <main className="w-full h-[150vh] md:h-[150vh] md:py-10 md:pt-40 md:px-32 bg-base flex md:gap-5">
+      <main className="w-full h-[130vh] md:h-[150vh] md:py-10 pt-20 md:pt-40 md:px-32 bg-base flex md:gap-5">
         <section className="menu md:w-3/12 h-full">
           <SidebarMenu />
         </section>
