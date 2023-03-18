@@ -4,12 +4,18 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ["localhost"],
+    domains: ["fazzpayy.vercel.app", "fazzpay.up.railway.app"],
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "localhost",
-        port: "8000",
+        protocol: "https",
+        hostname: "fazzpay.up.railway.app",
+        port: "",
+        pathname: "/images/",
+      },
+      {
+        protocol: "https",
+        hostname: "fazzpayy.vercel.app",
+        port: "",
         pathname: "/images/",
       },
     ],

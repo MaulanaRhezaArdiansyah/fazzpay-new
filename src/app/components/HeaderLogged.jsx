@@ -37,7 +37,7 @@ export default function HeaderLogged() {
             className="h-14 w-14 rounded-full hover:border-[6px] hover:border-[#6379F4] duration-200 cursor-pointer"
             title={dataUser.first_name && dataUser?.first_name}
           >
-            <img
+            {/* <img
               src={
                 dataUser.avatar
                   ? `${process.env.NEXT_PUBLIC_API_URL}/images/${dataUser?.avatar}`
@@ -47,8 +47,8 @@ export default function HeaderLogged() {
                 dataUser?.first_name ? dataUser?.first_name : "profile avatar"
               }
               className="rounded-full w-full h-full"
-            />
-            {/* <Image
+            /> */}
+            <Image
               src={
                 dataUser.avatar
                   ? `${process.env.NEXT_PUBLIC_API_URL}/images/${dataUser?.avatar}`
@@ -60,7 +60,7 @@ export default function HeaderLogged() {
               alt={
                 dataUser?.first_name ? dataUser?.first_name : "profile avatar"
               }
-            /> */}
+            />
           </div>
           <div className="flex flex-col justify-center max-sm:hidden">
             <p className="text-xl text-[#3A3D42] font-bold">
