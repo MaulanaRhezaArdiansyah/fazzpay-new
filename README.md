@@ -95,8 +95,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 [supabase-url]: https://supabase.com/
 [cyclic]: https://img.shields.io/badge/Cyclic.sh-20232A?style=for-the-badge&logo=cyclic.sh&logoColor=61DAFB
 [cyclic-url]: http://www.cyclic.sh/
-[railway]: https://img.shields.io/badge/Railway.app-20232A?style=for-the-badge&logo=railway.app&logoColor=61DAFB
-[railway-url]: http://www.cyclic.sh/
+[railway]: https://img.shields.io/badge/Railway-20232A?style=for-the-badge&logo=railway&logoColor=61DAFB
+[railway-url]: http://www.railway.app/
 [vercel]: https://img.shields.io/badge/Vercel-20232A?style=for-the-badge&logo=vercel&logoColor=61DAFB
 [vercel-url]: https://vercel.com/
 [postgresql]: https://img.shields.io/badge/PostgreSQL-20232A?style=for-the-badge&logo=postgresql&logoColor=61DAFB
