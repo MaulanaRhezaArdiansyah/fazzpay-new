@@ -52,7 +52,20 @@ export default function StatusFailed() {
       <div className="receiver-card bg-white w-full h-28 rounded-xl shadow-lg flex p-5 mb-5">
         <div className="flex items-center h-full w-full ">
           <div className="w-14 h-14 flex justify-center items-center mr-3">
-            <Image
+            <img
+              src={
+                userDetail.avatar
+                  ? `${process.env.NEXT_PUBLIC_API_URL}/images/${userDetail?.avatar}`
+                  : `http://localhost:3000/images/default-avatar.jpg`
+              }
+              alt={
+                userDetail?.first_name
+                  ? userDetail?.first_name
+                  : "profile avatar"
+              }
+              className="rounded-full w-full h-full cursor-pointer hover:border-[6px] hover:border-[#6379F4] duration-200"
+            />
+            {/* <Image
               src={
                 userDetail.avatar
                   ? `${process.env.NEXT_PUBLIC_API_URL}/images/${userDetail?.avatar}`
@@ -66,7 +79,7 @@ export default function StatusFailed() {
                   ? userDetail?.first_name
                   : "profile avatar"
               }
-            />
+            /> */}
           </div>
           <div>
             <p className="text-[#4D4B57] text-xl font-bold">

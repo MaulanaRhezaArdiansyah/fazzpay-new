@@ -56,7 +56,18 @@ export default function EditAvatarModal({ isVisible, closeModal, dataUser }) {
       >
         <div className="relative">
           <label htmlFor="editAvatar">
-            <Image
+            <img
+              src={
+                dataUser.avatar
+                  ? `${process.env.NEXT_PUBLIC_API_URL}/images/${dataUser?.avatar}`
+                  : `http://localhost:3000/images/default-avatar.jpg`
+              }
+              alt={
+                dataUser?.first_name ? dataUser?.first_name : "profile avatar"
+              }
+              className="rounded-full w-32 h-32 cursor-pointer hover:border-[6px] hover:border-[#6379F4] duration-200"
+            />
+            {/* <Image
               src={
                 imagePreview
                   ? imagePreview
@@ -70,7 +81,7 @@ export default function EditAvatarModal({ isVisible, closeModal, dataUser }) {
               alt={
                 dataUser?.first_name ? dataUser?.first_name : "profile avatar"
               }
-            />
+            /> */}
             <div className="bg-[#001694] rounded-full w-10 h-10 flex items-center justify-center absolute right-0 bottom-0">
               <Image
                 src={EditIcon}
