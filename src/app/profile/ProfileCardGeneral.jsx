@@ -30,28 +30,30 @@ export default function ProfileCardGeneral() {
           className="flex flex-col items-center justify-center gap-1 md:mb-5 cursor-pointer mb-2"
           action=""
         >
-          <div className="h-16 w-16 flex items-center justify-center">
-            <Image
-              src={
-                dataUser?.avatar
-                  ? `http://localhost:8000/uploads/images/${dataUser.avatar}`
-                  : `http://localhost:3000/images/default-avatar.jpg`
-              }
-              width={62}
-              height={62}
-              className="rounded-full"
-              alt={
-                dataUser?.first_name ? dataUser?.first_name : "profile avatar"
-              }
-            />
-          </div>
           <label
             onClick={() => setShowModal(true)}
-            className="label-avatar flex items-center justify-center gap-1"
+            className="label-avatar flex flex-col items-center justify-center gap-1"
             htmlFor="upload-photo"
           >
-            <Image src={require("../../assets/img/edit.png")} alt="edit" />
-            <p className="text-[#7A7886]">Edit</p>
+            <div className="h-16 w-16 flex items-center justify-center">
+              <Image
+                src={
+                  dataUser?.avatar
+                    ? `http://localhost:8000/uploads/images/${dataUser.avatar}`
+                    : `http://localhost:3000/images/default-avatar.jpg`
+                }
+                width={62}
+                height={62}
+                className="rounded-full"
+                alt={
+                  dataUser?.first_name ? dataUser?.first_name : "profile avatar"
+                }
+              />
+            </div>
+            <div className="flex items-center gap-1">
+              <Image src={require("../../assets/img/edit.png")} alt="edit" />
+              <p className="text-[#7A7886]">Edit</p>
+            </div>
           </label>
           <input name="photo" id="upload-photo" />
         </form>

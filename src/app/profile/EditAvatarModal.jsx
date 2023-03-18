@@ -66,7 +66,7 @@ export default function EditAvatarModal({ isVisible, closeModal, dataUser }) {
               }
               width={132}
               height={132}
-              className="rounded-full cursor-pointer"
+              className="rounded-full cursor-pointer hover:border-[6px] hover:border-[#6379F4] duration-200"
               alt={
                 dataUser?.first_name ? dataUser?.first_name : "profile avatar"
               }
