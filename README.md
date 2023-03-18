@@ -10,7 +10,7 @@
 ## Project Link
 * Github Repo : [https://github.com/MaulanaRhezaArdiansyah/fazzpay-new](https://github.com/MaulanaRhezaArdiansyah/fazzpay-new)
 * Frontend Deployment : https://fazzpayy.vercel.app
-* Backend Deployment : https://fazzpay.up.railway.app/api/v1
+* Backend Deployment : https://fazzpay.up.railway.app/api/v1 & https://fazzpay.cyclic.app/api/v1
 
 
 
