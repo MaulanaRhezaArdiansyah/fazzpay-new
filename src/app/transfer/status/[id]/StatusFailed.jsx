@@ -10,7 +10,7 @@ export default function StatusFailed() {
   const [userDetail, setUserDetail] = useState({});
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/v1/users/${id}`)
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/users/${id}`)
       .then((result) => {
         setUserDetail(result.data.data);
       })
@@ -55,7 +55,7 @@ export default function StatusFailed() {
             <Image
               src={
                 userDetail.avatar
-                  ? `http://localhost:8000/uploads/images/${userDetail?.avatar}`
+                  ? `${process.env.NEXT_PUBLIC_API_URL}/uploads/images/${userDetail?.avatar}`
                   : `http://localhost:3000/images/default-avatar.jpg`
               }
               className="rounded-full"

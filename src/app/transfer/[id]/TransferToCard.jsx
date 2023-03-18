@@ -11,7 +11,7 @@ export default function TransferToCard() {
   const [refetch, setRefetch] = useState(false);
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/v1/users/${id}`)
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/users/${id}`)
       .then((result) => {
         setUserDetail(result?.data?.data);
         setRefetch(!refetch);
@@ -24,7 +24,7 @@ export default function TransferToCard() {
   useEffect(() => {
     const userLoginID = JSON.parse(localStorage.getItem("@login"))?.user.id;
     axios
-      .get(`http://localhost:8000/api/v1/users/${userLoginID}`)
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/users/${userLoginID}`)
       .then((result) => {
         setUserLoginData(result?.data?.data);
         setRefetch(!refetch);
@@ -61,7 +61,7 @@ export default function TransferToCard() {
             <Image
               src={
                 userDetail.avatar
-                  ? `http://localhost:8000/uploads/images/${userDetail?.avatar}`
+                  ? `${process.env.NEXT_PUBLIC_API_URL}/uploads/images/${userDetail?.avatar}`
                   : `http://localhost:3000/images/default-avatar.jpg`
               }
               className="rounded-full"

@@ -22,7 +22,7 @@ export default function EditAvatarModal({ isVisible, closeModal, dataUser }) {
     dataAvatar.append("avatar", selectedImage);
     axios({
       method: "PATCH",
-      url: `http://localhost:8000/api/v1/users/avatar/${userID}`,
+      url: `${process.env.NEXT_PUBLIC_API_URL}/api/v1/users/avatar/${userID}`,
       data: dataAvatar,
       headers: {
         "Content-Type": "multipart/form-data",
@@ -61,7 +61,7 @@ export default function EditAvatarModal({ isVisible, closeModal, dataUser }) {
                 imagePreview
                   ? imagePreview
                   : dataUser?.avatar
-                  ? `http://localhost:8000/uploads/images/${dataUser.avatar}`
+                  ? `${process.env.NEXT_PUBLIC_API_URL}/uploads/images/${dataUser.avatar}`
                   : `http://localhost:3000/images/default-avatar.jpg`
               }
               width={132}

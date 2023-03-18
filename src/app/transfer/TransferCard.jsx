@@ -10,7 +10,9 @@ export default function TransferCard() {
   const [page, setPage] = useState(1);
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/v1/users?search=${keyword}&page=${page}`)
+      .get(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/v1/users?search=${keyword}&page=${page}`
+      )
       .then((result) => {
         setUserData(result?.data?.data);
       })
@@ -55,7 +57,7 @@ export default function TransferCard() {
                   <Image
                     src={
                       i.avatar
-                        ? `http://localhost:8000/uploads/images/${i?.avatar}`
+                        ? `${process.env.NEXT_PUBLIC_API_URL}/uploads/images/${i?.avatar}`
                         : `http://localhost:3000/images/default-avatar.jpg`
                     }
                     className="rounded-full"

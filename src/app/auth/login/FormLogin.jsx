@@ -27,7 +27,7 @@ export default function FormLogin() {
     event.preventDefault();
     axios({
       method: "POST",
-      url: `http://localhost:8000/api/v1/auth/login`,
+      url: `${process.env.NEXT_PUBLIC_API_URL}/api/v1/auth/login`,
       data: loginData,
     })
       .then((result) => {
