@@ -61,7 +61,7 @@ export default function EditAvatarModal({ isVisible, closeModal, dataUser }) {
                 imagePreview
                   ? imagePreview
                   : dataUser?.avatar
-                  ? `${process.env.NEXT_PUBLIC_API_URL}/uploads/images/${dataUser.avatar}`
+                  ? `${process.env.NEXT_PUBLIC_API_URL}/images/${dataUser.avatar}`
                   : `http://localhost:3000/images/default-avatar.jpg`
               }
               width={132}

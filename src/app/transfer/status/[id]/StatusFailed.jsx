@@ -55,7 +55,7 @@ export default function StatusFailed() {
             <Image
               src={
                 userDetail.avatar
-                  ? `${process.env.NEXT_PUBLIC_API_URL}/uploads/images/${userDetail?.avatar}`
+                  ? `${process.env.NEXT_PUBLIC_API_URL}/images/${userDetail?.avatar}`
                   : `http://localhost:3000/images/default-avatar.jpg`
               }
               className="rounded-full"

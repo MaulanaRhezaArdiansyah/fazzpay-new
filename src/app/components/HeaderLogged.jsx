@@ -40,7 +40,7 @@ export default function HeaderLogged() {
             <Image
               src={
                 dataUser.avatar
-                  ? `${process.env.NEXT_PUBLIC_API_URL}/uploads/images/${dataUser?.avatar}`
+                  ? `${process.env.NEXT_PUBLIC_API_URL}/images/${dataUser?.avatar}`
                   : `http://localhost:3000/images/default-avatar.jpg`
               }
               className="rounded-full"

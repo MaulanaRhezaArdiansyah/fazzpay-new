@@ -57,7 +57,7 @@ export default function TransferCard() {
                   <Image
                     src={
                       i.avatar
-                        ? `${process.env.NEXT_PUBLIC_API_URL}/uploads/images/${i?.avatar}`
+                        ? `${process.env.NEXT_PUBLIC_API_URL}/images/${i?.avatar}`
                         : `http://localhost:3000/images/default-avatar.jpg`
                     }
                     className="rounded-full"
