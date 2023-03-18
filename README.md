@@ -10,7 +10,7 @@
 ## Project Link
 * Github Repo : [https://github.com/MaulanaRhezaArdiansyah/fazzpay-new](https://github.com/MaulanaRhezaArdiansyah/fazzpay-new)
 * Frontend Deployment : https://fazzpayy.vercel.app
-* Backend Deployment : https://fazzpay.cyclic.app/api/v1
+* Backend Deployment : https://fazzpay.up.railway.app/api/v1 & https://fazzpay.cyclic.app/api/v1
 
 
 
@@ -20,13 +20,14 @@
 - [![Express][express.js]][express-url]
 - [![Supabase][supabase]][supabase-url]
 - [![Cyclic][cyclic]][cyclic-url]
+- [![Railway][railway]][railway-url]
 - [![Vercel][vercel]][vercel-url]
 - [![PostgreSQL][postgresql]][postgresql-url]
 - [![Postman][postman]][postman-url]
 
 ## Screenshot
 
-![screenshot](https://fazzpay.cyclic.app/uploads/images/fazzpay-landing.png)
+![screenshot](https://fazzpay.up.railway.app/images/fazzpay-landing.png)
 
 ## Quickstart
 
@@ -94,6 +95,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 [supabase-url]: https://supabase.com/
 [cyclic]: https://img.shields.io/badge/Cyclic.sh-20232A?style=for-the-badge&logo=cyclic.sh&logoColor=61DAFB
 [cyclic-url]: http://www.cyclic.sh/
+[railway]: https://img.shields.io/badge/Railway.app-20232A?style=for-the-badge&logo=railway.app&logoColor=61DAFB
+[railway-url]: http://www.cyclic.sh/
 [vercel]: https://img.shields.io/badge/Vercel-20232A?style=for-the-badge&logo=vercel&logoColor=61DAFB
 [vercel-url]: https://vercel.com/
 [postgresql]: https://img.shields.io/badge/PostgreSQL-20232A?style=for-the-badge&logo=postgresql&logoColor=61DAFB
