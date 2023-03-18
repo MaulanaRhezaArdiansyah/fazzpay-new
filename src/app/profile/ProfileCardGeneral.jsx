@@ -44,7 +44,7 @@ export default function ProfileCardGeneral() {
                 }
                 width={62}
                 height={62}
-                className="rounded-full"
+                className="rounded-full hover:border-[6px] hover:border-[#6379F4] duration-200"
                 alt={
                   dataUser?.first_name ? dataUser?.first_name : "profile avatar"
                 }
