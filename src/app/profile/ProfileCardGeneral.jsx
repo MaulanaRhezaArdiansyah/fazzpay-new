@@ -36,7 +36,7 @@ export default function ProfileCardGeneral() {
             htmlFor="upload-photo"
           >
             <div className="h-16 w-16 flex items-center justify-center">
-              <img
+              {/* <img
                 src={
                   dataUser.avatar
                     ? `${process.env.NEXT_PUBLIC_API_URL}/images/${dataUser?.avatar}`
@@ -46,8 +46,8 @@ export default function ProfileCardGeneral() {
                   dataUser?.first_name ? dataUser?.first_name : "profile avatar"
                 }
                 className="rounded-full w-full h-full"
-              />
-              {/* <Image
+              /> */}
+              <Image
                 src={
                   dataUser?.avatar
                     ? `${process.env.NEXT_PUBLIC_API_URL}/images/${dataUser.avatar}`
@@ -59,7 +59,7 @@ export default function ProfileCardGeneral() {
                 alt={
                   dataUser?.first_name ? dataUser?.first_name : "profile avatar"
                 }
-              /> */}
+              />
             </div>
             <div className="flex items-center gap-1">
               <Image src={require("../../assets/img/edit.png")} alt="edit" />

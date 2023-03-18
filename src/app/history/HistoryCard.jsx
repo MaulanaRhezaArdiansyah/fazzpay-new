@@ -52,7 +52,6 @@ export default function HistoryCard() {
                 <div className="flex items-center">
                   <div className="w-14 h-14 flex justify-center items-center mr-3">
                     <Image
-                      // src={require("../../../assets/img/foto-profil-2.jpeg")}
                       src="/images/foto-profil-2.jpeg"
                       alt="profile"
                       className="w-full h-full rounded-full"
@@ -67,7 +66,6 @@ export default function HistoryCard() {
                     <p className="text-[#7A7886]">Accept</p>
                   </div>
                 </div>
-                {/* <p className="font-bold text-[#1EC15F] text-xl">+Rp50.000</p> */}
                 <p className="font-bold text-[#1EC15F] text-xl">{i.amount}</p>
               </div>
             );

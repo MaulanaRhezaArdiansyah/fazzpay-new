@@ -54,7 +54,7 @@ export default function TransferCard() {
             >
               <div className="flex items-center h-full w-full ">
                 <div className="w-14 h-14 flex justify-center items-center mr-3">
-                  <img
+                  {/* <img
                     src={
                       i.avatar
                         ? `${process.env.NEXT_PUBLIC_API_URL}/images/${i?.avatar}`
@@ -62,8 +62,8 @@ export default function TransferCard() {
                     }
                     alt={i?.first_name ? i?.first_name : "profile avatar"}
                     className="rounded-full w-full h-full cursor-pointer hover:border-[6px] hover:border-[#6379F4] duration-200"
-                  />
-                  {/* <Image
+                  /> */}
+                  <Image
                     src={
                       i.avatar
                         ? `${process.env.NEXT_PUBLIC_API_URL}/images/${i?.avatar}`
@@ -73,7 +73,7 @@ export default function TransferCard() {
                     width={62}
                     height={62}
                     alt={i?.first_name ? i?.first_name : "profile avatar"}
-                  /> */}
+                  />
                 </div>
                 <div>
                   <p className="text-[#4D4B57] text-xl font-bold">
