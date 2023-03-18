@@ -14,7 +14,7 @@ export default function TopupModal({ isVisible, closeModal }) {
     const id = JSON.parse(localStorage.getItem("@login"))?.user.id;
     axios({
       method: "PATCH",
-      url: `${process.env.NEXT_PUBLIC_API_URL}/api/v1/users/${id}`,
+      url: `http://localhost:8000/api/v1/users/${id}`,
       data: topUpData,
     })
       .then((result) => {

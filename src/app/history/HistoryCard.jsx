@@ -9,7 +9,7 @@ export default function HistoryCard() {
   useEffect(() => {
     const id = JSON.parse(localStorage.getItem("@login"))?.user.id;
     axios
-      .get(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/history/${id}`)
+      .get(`http://localhost:8000/api/v1/history/${id}`)
       .then((result) => {
         // const historyArray = result.data.data.history;
         // setHistory(historyArray);
@@ -25,7 +25,7 @@ export default function HistoryCard() {
   // });
   // const idSender =
   // useEffect(()=> {
-  //   axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/users/${id}`)
+  //   axios.get(`http://localhost:8000/api/v1/users/${id}`)
   // })
   return (
     <>

@@ -30,7 +30,7 @@ export default function FormSignup() {
     event.preventDefault();
     axios({
       method: "POST",
-      url: `${process.env.NEXT_PUBLIC_API_URL}/api/v1/auth/signup`,
+      url: `http://localhost:8000/api/v1/auth/signup`,
       data: signupFormData,
       headers: {
         "Content-Type": "multipart/form-data",

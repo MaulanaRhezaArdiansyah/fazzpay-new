@@ -15,7 +15,7 @@ export default function HeaderLogged() {
   useEffect(() => {
     const id = JSON.parse(localStorage?.getItem("@login"))?.user.id;
     axios
-      .get(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/users/${id}`)
+      .get(`http://localhost:8000/api/v1/users/${id}`)
       .then((result) => {
         setDataUser(result?.data?.data);
         setRefetch(!refetch);
@@ -40,7 +40,7 @@ export default function HeaderLogged() {
             <Image
               src={
                 dataUser.avatar
-                  ? `${process.env.NEXT_PUBLIC_API_URL}/uploads/images/${dataUser?.avatar}`
+                  ? `http://localhost:8000/uploads/images/${dataUser?.avatar}`
                   : `http://localhost:3000/images/default-avatar.jpg`
               }
               className="rounded-full"
