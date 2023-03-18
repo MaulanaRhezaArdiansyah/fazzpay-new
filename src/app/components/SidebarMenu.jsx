@@ -104,7 +104,7 @@ export default function SidebarMenu() {
           <button
             onClick={() => {
               alert(
-                `You are logged out! See you soon ${dataUser[0]?.first_name} 😊`
+                `You are logged out! See you soon ${dataUser?.first_name} 😊`
               );
               localStorage.removeItem("@login");
               router.push("/auth/login");
