@@ -58,7 +58,7 @@ export default function TransferCard() {
                     src={
                       i.avatar
                         ? `${process.env.NEXT_PUBLIC_API_URL}/images/${i?.avatar}`
-                        : `http://localhost:3000/images/default-avatar.jpg`
+                        : `${process.env.NEXT_PUBLIC_IMAGE_URL}/images/default-avatar.jpg`
                     }
                     alt={i?.first_name ? i?.first_name : "profile avatar"}
                     className="rounded-full w-full h-full cursor-pointer hover:border-[6px] hover:border-[#6379F4] duration-200"
@@ -67,7 +67,7 @@ export default function TransferCard() {
                     src={
                       i.avatar
                         ? `${process.env.NEXT_PUBLIC_API_URL}/images/${i?.avatar}`
-                        : `http://localhost:3000/images/default-avatar.jpg`
+                        : `${process.env.NEXT_PUBLIC_IMAGE_URL}/images/default-avatar.jpg`
                     }
                     className="rounded-full"
                     width={62}

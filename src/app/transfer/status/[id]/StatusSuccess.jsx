@@ -101,7 +101,7 @@ export default function StatusSuccess() {
               src={
                 userDetail.avatar
                   ? `${process.env.NEXT_PUBLIC_API_URL}/images/${userDetail?.avatar}`
-                  : `http://localhost:3000/images/default-avatar.jpg`
+                  : `${process.env.NEXT_PUBLIC_IMAGE_URL}/images/default-avatar.jpg`
               }
               alt={
                 userDetail?.first_name
@@ -114,7 +114,7 @@ export default function StatusSuccess() {
               src={
                 userDetail.avatar
                   ? `${process.env.NEXT_PUBLIC_API_URL}/images/${userDetail?.avatar}`
-                  : `http://localhost:3000/images/default-avatar.jpg`
+                  : `${process.env.NEXT_PUBLIC_IMAGE_URL}/images/default-avatar.jpg`
               }
               className="rounded-full"
               width={62}
