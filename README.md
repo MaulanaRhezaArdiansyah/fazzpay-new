@@ -93,7 +93,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 [express-url]: https://expressjs.com/
 [supabase]: https://img.shields.io/badge/Supabase-20232A?style=for-the-badge&logo=supabase&logoColor=61DAFB
 [supabase-url]: https://supabase.com/
-[cyclic]: https://img.shields.io/badge/cyclic-20232A?style=for-the-badge&logo=cyclic&logoColor=61DAFB
+[cyclic]: https://img.shields.io/badge/Cyclic-20232A?style=for-the-badge&logo=cyclic&logoColor=61DAFB
 [cyclic-url]: http://www.cyclic.sh/
 [railway]: https://img.shields.io/badge/Railway-20232A?style=for-the-badge&logo=railway&logoColor=61DAFB
 [railway-url]: http://www.railway.app/
