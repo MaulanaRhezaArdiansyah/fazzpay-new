@@ -14,7 +14,7 @@ export default function EditPhoneCard() {
     const id = JSON.parse(localStorage.getItem("@login"))?.user.id;
     axios({
       method: "PATCH",
-      url: `http://localhost:8000/api/v1/users/edit-phone/${id}`,
+      url: `${process.env.NEXT_PUBLIC_API_URL}/api/v1/users/edit-phone/${id}`,
       data: phone,
     })
       .then((result) => {

@@ -10,7 +10,7 @@ export default function ConfirmCard() {
   const [userDetail, setUserDetail] = useState({});
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/v1/users/${id}`)
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/users/${id}`)
       .then((result) => {
         setUserDetail(result?.data?.data);
       })
@@ -23,7 +23,7 @@ export default function ConfirmCard() {
   useEffect(() => {
     const idSender = JSON.parse(localStorage.getItem("@login"))?.user.id;
     axios
-      .get(`http://localhost:8000/api/v1/users/${idSender}`)
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/users/${idSender}`)
       .then((result) => {
         setSenderDetail(result?.data?.data);
       })
@@ -49,7 +49,7 @@ export default function ConfirmCard() {
     const idSender = JSON.parse(localStorage.getItem("@login"))?.user.id;
     axios({
       method: "PATCH",
-      url: `http://localhost:8000/api/v1/transfer/${id}/${idSender}`,
+      url: `${process.env.NEXT_PUBLIC_API_URL}/api/v1/transfer/${id}/${idSender}`,
       data: amountConfirm,
     })
       .then((result) => {
@@ -82,7 +82,7 @@ export default function ConfirmCard() {
             <Image
               src={
                 userDetail.avatar
-                  ? `http://localhost:8000/uploads/images/${userDetail?.avatar}`
+                  ? `${process.env.NEXT_PUBLIC_API_URL}/uploads/images/${userDetail?.avatar}`
                   : `http://localhost:3000/images/default-avatar.jpg`
               }
               className="rounded-full"

@@ -13,7 +13,7 @@ export default function StatusSuccess() {
   const [userDetail, setUserDetail] = useState({});
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/v1/users/${id}`)
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/users/${id}`)
       .then((result) => {
         setUserDetail(result?.data?.data);
       })
@@ -26,7 +26,7 @@ export default function StatusSuccess() {
   useEffect(() => {
     const idSender = JSON.parse(localStorage.getItem("@login"))?.user.id;
     axios
-      .get(`http://localhost:8000/api/v1/users/${idSender}`)
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/users/${idSender}`)
       .then((result) => {
         setSenderDetail(result?.data?.data);
       })
@@ -100,7 +100,7 @@ export default function StatusSuccess() {
             <Image
               src={
                 userDetail.avatar
-                  ? `http://localhost:8000/uploads/images/${userDetail?.avatar}`
+                  ? `${process.env.NEXT_PUBLIC_API_URL}/uploads/images/${userDetail?.avatar}`
                   : `http://localhost:3000/images/default-avatar.jpg`
               }
               className="rounded-full"

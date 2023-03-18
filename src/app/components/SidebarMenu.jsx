@@ -13,7 +13,7 @@ export default function SidebarMenu() {
   useEffect(() => {
     const id = JSON.parse(localStorage.getItem("@login"))?.user.id;
     axios
-      .get(`http://localhost:8000/api/v1/users/${id}`)
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/users/${id}`)
       .then((result) => {
         setDataUser(result.data.data);
       })
