@@ -52,14 +52,20 @@ export default function StatusFailed() {
       <div className="receiver-card bg-white w-full h-28 rounded-xl shadow-lg flex p-5 mb-5">
         <div className="flex items-center h-full w-full ">
           <div className="w-14 h-14 flex justify-center items-center mr-3">
-            <img
+            <Image
               src={
                 userDetail.avatar
-                  ? `http://localhost:8000/uploads/images/${userDetail.avatar}`
+                  ? `http://localhost:8000/uploads/images/${userDetail?.avatar}`
                   : `http://localhost:3000/images/default-avatar.jpg`
               }
-              alt="profile avatar"
-              className="w-full h-full rounded-full"
+              className="rounded-full"
+              width={62}
+              height={62}
+              alt={
+                userDetail?.first_name
+                  ? userDetail?.first_name
+                  : "profile avatar"
+              }
             />
           </div>
           <div>

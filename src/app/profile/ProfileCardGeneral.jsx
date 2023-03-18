@@ -32,7 +32,7 @@ export default function ProfileCardGeneral() {
           className="flex flex-col items-center justify-center gap-1 md:mb-5 cursor-pointer mb-2"
           action=""
         >
-          <div className="h-16 w-16 flex items-center justify-center bg-red-400">
+          <div className="h-16 w-16 flex items-center justify-center">
             <Image
               src={
                 dataUser?.avatar
